@@ -27,14 +27,14 @@ export default function Certifications({ setActiveSection }: CertificationsProps
       title: "JS Intermediate Certificate",
       issuer: "HackerRank",
       date: "2024",
-      link: "https://www.hackerrank.com/certificate/js-intermediate",
+      link: "https://drive.google.com/file/d/1WiJBLYqrt8yiCGfmQtS5qW9_XOErNqBX/view?usp=sharing",
       image: "/js.png",
     },
     {
       title: "Tech Blitz Hackathon",
       issuer: "Coding Ninjas",
       date: "2024",
-      link: "https://drive.google.com/file/d/11aNTheneEkldYaPEnaEs_5v1xKl4N-zs/view",
+      link: "https://credsverse.com/credentials/327bcf6d-fe5e-4a66-9f53-08fe4026bc5c",
       image: "/hackathon.png",
     },
   ]

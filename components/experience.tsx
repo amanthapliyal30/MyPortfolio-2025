@@ -28,7 +28,7 @@ export default function Experience({ setActiveSection }: ExperienceProps) {
     company: "Flytant Private Ltd",
     period: "Sep 2024 - Nov 2024",
     location: "Noida, India",
-    certificate: "https://drive.google.com/file/d/11aNTheneEkldYaPEnaEs_5v1xKl4N-zs/view?usp=sharing",
+    certificate: "https://drive.google.com/file/d/11aNTheneEkldYaPEnaEs_5v1xKl4N-zs/view",
     description: [
       "Acquired practical skills in Next.js, TypeScript, and JavaScript through comprehensive training",
       "Built a responsive e-commerce platform using Next.js and Express.js with authentication & cart features",
