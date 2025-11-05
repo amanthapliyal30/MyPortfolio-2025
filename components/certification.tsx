@@ -13,7 +13,7 @@ export default function Certifications({ setActiveSection }: CertificationsProps
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setActiveSection("certifications"),
-      { threshold: 0.5 }
+      { threshold: 0.3 } // ✅ Improved for mobile
     )
 
     const el = document.getElementById("certifications")
@@ -40,28 +40,28 @@ export default function Certifications({ setActiveSection }: CertificationsProps
   ]
 
   return (
-    <section id="certifications" className="min-h-screen space-y-16 pb-24 pt-24">
-      <div className="flex items-center gap-4">
-        <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
-        <h2 className="text-4xl sm:text-5xl font-black gradient-text">CERTIFICATIONS</h2>
-        <Award className="w-7 h-7 text-accent animate-bounce" />
+    <section id="certifications" className="min-h-screen space-y-12 sm:space-y-16 pb-20 pt-20 sm:pb-24 sm:pt-24 px-4 sm:px-6 lg:px-0"> {/* ✅ Mobile padding */}
+      <div className="flex items-center gap-3 flex-wrap"> {/* ✅ Wrap on small screens */}
+        <div className="h-1 w-14 sm:w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
+        <h2 className="text-3xl sm:text-5xl font-black gradient-text">CERTIFICATIONS</h2> {/* ✅ Scale on mobile */}
+        <Award className="w-5 h-5 sm:w-7 sm:h-7 text-accent animate-bounce" />
       </div>
 
-      <p className="text-lg text-foreground/80 max-w-2xl leading-relaxed">
+      <p className="text-sm sm:text-lg text-foreground/80 max-w-2xl leading-relaxed"> {/* ✅ Font scaled */}
         These certifications highlight my continuous learning journey and commitment to mastering cutting-edge skills.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2"> {/* ✅ Full width mobile */}
         {certifications.map((cert, idx) => (
           <Link
             key={idx}
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-2xl border border-primary/30 bg-card/40 p-6 hover:border-primary/60 transition-all duration-300 backdrop-blur-md hover:backdrop-blur-lg hover:bg-card/60 hover:shadow-lg hover:shadow-primary/20 flex flex-col"
+            className="group relative overflow-hidden rounded-2xl border border-primary/30 bg-card/40 p-5 sm:p-6 hover:border-primary/60 transition-all duration-300 backdrop-blur-md hover:backdrop-blur-lg hover:bg-card/60 hover:shadow-lg hover:shadow-primary/20 flex flex-col"
           >
             {/* Certification Image */}
-            <div className="relative w-full h-56 mb-4 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full aspect-[16/10] sm:h-56 mb-4 rounded-lg overflow-hidden shadow-lg"> {/* ✅ Aspect ratio for mobile */}
               <Image
                 src={cert.image}
                 alt={cert.title}
@@ -71,19 +71,19 @@ export default function Certifications({ setActiveSection }: CertificationsProps
             </div>
 
             <div className="relative space-y-3">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+              <div className="flex justify-between items-start gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors"> {/* ✅ Font scaled */}
                   {cert.title}
                 </h3>
-                <ExternalLink className="w-5 h-5 opacity-0 group-hover:opacity-100 text-accent transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
+                <ExternalLink className="hidden sm:block w-5 h-5 opacity-0 group-hover:opacity-100 text-accent transition-all group-hover:-translate-y-1 group-hover:translate-x-1" /> {/* ✅ Hidden on mobile */}
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-foreground/80">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-foreground/80"> {/* ✅ Font scaled */}
                 <CheckCircle className="w-4 h-4 text-primary" />
                 <p>{cert.issuer}</p>
               </div>
 
-              <p className="text-xs text-muted-foreground">{cert.date}</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">{cert.date}</p>
             </div>
           </Link>
         ))}
