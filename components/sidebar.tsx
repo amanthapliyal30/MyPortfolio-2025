@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Github, Linkedin, Mail, Phone, Menu, X } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface SidebarProps {
   activeSection: string
@@ -11,6 +11,16 @@ interface SidebarProps {
 
 export default function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isShrunk, setIsShrunk] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsShrunk(window.scrollY > 60) // ✅ Shrinks after slight scroll
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
     { label: "ABOUT", id: "about" },
@@ -23,14 +33,20 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
 
   return (
     <>
-      {/* Desktop Sidebar */}
-      <aside className="fixed left-0 top-0 h-screen w-64 bg-sidebar/100 border-r border-sidebar-border p-8 flex-col justify-between hidden lg:flex z-40">
-        <div>
-          <h1 className="text-3xl font-bold text-black mb-1">
+      {/* ✅ Desktop Sidebar with shrink effect */}
+      <aside
+        className={`fixed left-0 top-0 h-screen bg-sidebar/100 border-r border-sidebar-border px-6 flex-col justify-between hidden lg:flex z-40 transition-all duration-300 backdrop-blur-md
+          ${isShrunk ? "w-52 py-6" : "w-64 p-8"}`}
+      >
+        <div className="transition-all">
+          <h1 className={`font-bold text-black transition-all ${isShrunk ? "text-2xl" : "text-3xl"}`}>
             Aman
           </h1>
-          <p className="text-sm font-medium tracking-wide mb-10 bg-gradient-to-r from-[#00BFFF] via-[#7CFC00] to-[#FF69B4] text-transparent bg-clip-text animate-pulse">
-            MCA Student <span className="text-[#FFD700]/70 mx-2">•</span> AI/ML Specialist
+          <p
+            className={`font-medium tracking-wide mb-10 bg-gradient-to-r from-[#00BFFF] via-[#7CFC00] to-[#FF69B4] text-transparent bg-clip-text animate-pulse transition-all
+            ${isShrunk ? "text-xs" : "text-sm"}`}
+          >
+            MCA Student <span className="mx-1">•</span> AI/ML Specialist
           </p>
 
           {/* Navigation */}
@@ -40,11 +56,10 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={() => setActiveSection(item.id)}
-                className={`block text-sm font-medium transition-all duration-300 border-l-2 pl-3 ${
-                  activeSection === item.id
+                className={`block text-sm font-medium transition-all border-l-2 pl-3 duration-300
+                  ${activeSection === item.id
                     ? "text-primary border-primary translate-x-1"
-                    : "text-muted-foreground border-transparent hover:text-primary hover:translate-x-1"
-                }`}
+                    : "text-muted-foreground border-transparent hover:text-primary hover:translate-x-1"}`}
               >
                 {item.label}
               </Link>
@@ -59,7 +74,7 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
               { href: "https://github.com/amanthapliyal30", icon: Github },
               { href: "https://www.linkedin.com/in/aman-thapliyal-452a012a5/", icon: Linkedin },
               { href: "mailto:aman30t@gmail.com", icon: Mail },
-              { href: "tel:+917668803243", icon: Phone }
+              { href: "tel:+917668803243", icon: Phone },
             ].map(({ href, icon: Icon }, i) => (
               <Link
                 key={i}
@@ -75,7 +90,7 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
         </div>
       </aside>
 
-      {/* Mobile Menu Button */}
+      {/* ✅ Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-4 left-4 lg:hidden z-50 p-2 bg-sidebar/80 backdrop-blur-md rounded-md border border-sidebar-border shadow-md hover:shadow-lg transition-all text-black"
@@ -83,16 +98,13 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile Sidebar */}
+      {/* ✅ Mobile Drawer Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-full w-60 bg-sidebar/100 border-r border-sidebar-border p-8 flex flex-col justify-between lg:hidden z-40 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed left-0 top-0 h-full w-60 bg-sidebar/100 border-r border-sidebar-border p-8 flex flex-col justify-between lg:hidden z-40 transition-transform duration-300
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="mt-10">
-          <h1 className="text-2xl font-bold text-black mb-1">
-            Aman
-          </h1>
+          <h1 className="text-2xl font-bold text-black mb-1">Aman</h1>
           <p className="text-sm text-muted-foreground mb-8">MCA Student • AI/ML Specialist</p>
 
           <nav className="space-y-6">
@@ -104,11 +116,10 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
                   setActiveSection(item.id)
                   setIsOpen(false)
                 }}
-                className={`block text-sm font-medium transition-all duration-300 border-l-2 pl-3 ${
-                  activeSection === item.id
+                className={`block text-sm font-medium transition-all duration-300 border-l-2 pl-3
+                  ${activeSection === item.id
                     ? "text-primary border-primary"
-                    : "text-muted-foreground border-transparent hover:text-primary"
-                }`}
+                    : "text-muted-foreground border-transparent hover:text-primary"}`}
               >
                 {item.label}
               </Link>
@@ -122,7 +133,7 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
               { href: "https://github.com/amanthapliyal30", icon: Github },
               { href: "https://www.linkedin.com/in/aman-thapliyal-452a012a5/", icon: Linkedin },
               { href: "mailto:aman30t@gmail.com", icon: Mail },
-              { href: "tel:+917668803243", icon: Phone }
+              { href: "tel:+917668803243", icon: Phone },
             ].map(({ href, icon: Icon }, i) => (
               <Link
                 key={i}
