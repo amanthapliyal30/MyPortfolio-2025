@@ -5,6 +5,7 @@ import Sidebar from "@/components/sidebar"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Experience from "@/components/experience"
+import Education from "@/components/education"   // ✅ <--- added
 import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Contact from "@/components/contact"
@@ -31,18 +32,28 @@ export default function Home() {
           <div id="about" className="scroll-mt-20">
             <About setActiveSection={setActiveSection} />
           </div>
+
           <div id="experience" className="scroll-mt-20">
             <Experience setActiveSection={setActiveSection} />
           </div>
+
+          {/* ✅ New Education Section Added */}
+          <div id="education" className="scroll-mt-20">
+            <Education setActiveSection={setActiveSection} />
+          </div>
+
           <div id="projects" className="scroll-mt-20">
             <Projects setActiveSection={setActiveSection} />
           </div>
+
           <div id="skills" className="scroll-mt-20">
             <Skills setActiveSection={setActiveSection} />
           </div>
+
           <div id="certificates" className="scroll-mt-20">
-            <Certifications setActiveSection={setActiveSection}/>
+            <Certifications setActiveSection={setActiveSection} />
           </div>
+
           <div id="contact" className="scroll-mt-20">
             <Contact setActiveSection={setActiveSection} />
           </div>

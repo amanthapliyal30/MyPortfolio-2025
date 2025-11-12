@@ -32,7 +32,7 @@ export default function Projects({ setActiveSection }: ProjectsProps) {
         "Feature engineering",
         "High model accuracy",
       ],
-      location: "Kotdwara, India",
+      // location: "Kotdwara, India",
       image: "/images/projects/spam-tracker.png",
       link: "https://github.com/aman30t/sms-spam-classifier",
     },
