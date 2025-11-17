@@ -34,7 +34,7 @@ export default function Projects({ setActiveSection }: ProjectsProps) {
       ],
       // location: "Kotdwara, India",
       image: "/images/projects/spam-tracker.png",
-      link: "https://github.com/aman30t/sms-spam-classifier",
+      link: "https://github.com/amanthapliyal30/spam-detector",
     },
     {
       title: "E-Commerce Website",
