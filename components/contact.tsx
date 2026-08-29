@@ -161,7 +161,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
       </div>
 
       <p className="text-center text-muted-foreground text-sm pt-12">
-        © 2025 Shivani Devrani — Made with ❤️ using Next.js, React & Tailwind CSS
+        © 2026 Shivani Devrani — Made with ❤️ using Next.js, React & Tailwind CSS
       </p>
     </section>
   )
