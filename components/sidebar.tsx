@@ -100,7 +100,7 @@ export default function Sidebar({ activeSection, setActiveSection }: SidebarProp
               </Link>
             ))}
           </div>
-          <p className="text-xs text-gray-500">© 2025 Shivani Devrani</p>
+          <p className="text-xs text-gray-500">© 2026 Shivani Devrani</p>
         </div>
       </aside>
 
