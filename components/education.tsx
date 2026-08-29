@@ -23,21 +23,14 @@ export default function Education({ setActiveSection }: EducationProps) {
   }, [setActiveSection])
 
   const educationData = [
-    {
-      degree: "Master of Computer Applications (AI & ML)",
-      institute: "Lovely Professional University (LPU)",
-      period: "2025 - 2027",
-      grade: "Ongoing",
-      location: "Punjab, India",
-    },
-    {
-      degree: "Bachelor’s in Computer Applications (BCA)",
-      institute: "Institute of Hospitality Management and Sciences",
-      period: "2022 - 2025",
-      grade: "7.0 CGPA",
-      location: "Uttarakhand, India",
-    },
-  ]
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institute: "Institute of Hospitality Management and Sciences",
+    period: "2021 - 2024",
+    grade: "6.7 CGPA",
+    location: "Uttarakhand, India",
+  },
+]
 
   return (
     <section id="education" className="space-y-12">

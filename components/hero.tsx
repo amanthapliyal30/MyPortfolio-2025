@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
         {/* Download CV */}
         <Link
-          href="/Aman_Resume.pdf"
+          href="/Shivani_Resume.pdf"
           download
           className="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 shadow-lg hover:bg-accent transition-all duration-300"
         >
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="relative mb-4">
             <div className="relative w-52 h-52 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/60 shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-md">
               <Image 
-                src="/aman.jpeg" 
+                src="/shivani.jpeg" 
                 alt="Aman Thapliyal" 
                 fill 
                 className="object-cover" 
@@ -70,17 +70,17 @@ export default function Hero() {
           <div className="space-y-6">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
               <span className="gradient-text animate-gradient-shift block">
-                Aman Thapliyal
+                Shivani Devrani
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary via-foreground to-accent bg-clip-text text-transparent">
-              MCA Student • AI/ML Specialist • Full-Stack Developer
+              BCA Graduate • UI/UX Designer
             </p>
 
             <p className="text-base sm:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              Crafting intelligent solutions at the intersection of machine learning and web development.
-              Passionate about building scalable applications.
+              UI/UX Designer passionate about transforming ideas into intuitive digital experiences. 
+              I design clean, user-centered interfaces that balance aesthetics, usability, and functionality.
             </p>
           </div>
 

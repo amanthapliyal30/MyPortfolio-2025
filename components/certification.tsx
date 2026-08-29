@@ -24,19 +24,19 @@ export default function Certifications({ setActiveSection }: CertificationsProps
 
   const certifications = [
     {
-      title: "JS Intermediate Certificate",
-      issuer: "HackerRank",
+      title: "UI/UX Design",
+      issuer: "Udemy",
       date: "2024",
-      link: "https://drive.google.com/file/d/1WiJBLYqrt8yiCGfmQtS5qW9_XOErNqBX/view?usp=sharing",
-      image: "/js.png",
+      link: "https://drive.google.com/file/d/1EWypSSYsCm_3vahW68JBmh6x8q165O7K/view",
+      image: "/ui.png",
     },
-    {
-      title: "Tech Blitz Hackathon",
-      issuer: "Coding Ninjas",
-      date: "2024",
-      link: "https://credsverse.com/credentials/327bcf6d-fe5e-4a66-9f53-08fe4026bc5c",
-      image: "/hackathon.png",
-    },
+    // {
+    //   title: "Tech Blitz Hackathon",
+    //   issuer: "Coding Ninjas",
+    //   date: "2024",
+    //   link: "https://credsverse.com/credentials/327bcf6d-fe5e-4a66-9f53-08fe4026bc5c",
+    //   image: "/hackathon.png",
+    // },
   ]
 
   return (
@@ -61,12 +61,12 @@ export default function Certifications({ setActiveSection }: CertificationsProps
             className="group relative overflow-hidden rounded-2xl border border-primary/30 bg-card/40 p-5 sm:p-6 hover:border-primary/60 transition-all duration-300 backdrop-blur-md hover:backdrop-blur-lg hover:bg-card/60 hover:shadow-lg hover:shadow-primary/20 flex flex-col"
           >
             {/* Certification Image */}
-            <div className="relative w-full aspect-[16/10] sm:h-56 mb-4 rounded-lg overflow-hidden shadow-lg"> {/* ✅ Aspect ratio for mobile */}
+            <div className="relative w-full aspect-[16/10] sm:h-56 mb-4 rounded-lg overflow-hidden shadow-lg bg-background/40"> {/* ✅ Aspect ratio for mobile + bg for letterboxing */}
               <Image
                 src={cert.image}
                 alt={cert.title}
                 fill
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 rounded-lg"
+                className="object-contain p-2 group-hover:scale-105 transition-transform duration-500 rounded-lg"
               />
             </div>
 

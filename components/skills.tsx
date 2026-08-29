@@ -24,42 +24,41 @@ export default function Skills({ setActiveSection }: SkillsProps) {
 
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["Java", "Python", "JavaScript", "TypeScript"],
+      title: "Basic Front-End",
+      skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
       icon: "🔤",
     },
     {
-      title: "Frameworks & Libraries",
-      skills: ["Next.js", "React", "Express.js", "Spring Boot", "Numpy", "Pandas", "Matplotlib"],
+      title: "Design & Prototype",
+      skills: ["Figma", "Wireframing", "Prototyping", "User Flows", "Design Systems"],
       icon: "🏗️",
     },
     {
-      title: "Machine Learning & AI",
+      title: "UI/UX Skills",
       skills: [
-        "Feature Scaling",
-        "Feature Selection",
-        "Linear Regression",
-        "Logistic Regression",
-        "Polynomial Regression",
-        "NLP",
-        "Text Preprocessing",
+        "Visual Design",
+        "Responsive Design",
+        "Interaction Design",
+        "Usability Principles",
+        "Accessibility Basics (WCAG)",
+        "User Research",
       ],
       icon: "🤖",
     },
     {
-      title: "Databases",
-      skills: ["MySQL", "MongoDB"],
+      title: "Concepts",
+      skills: ["Information Architecture", "Layout Principles"],
       icon: "🗄️",
     },
     {
-      title: "Tools & Other",
-      skills: ["Data Structures & Algorithms", "Problem Solving", "Git", "RESTful APIs"],
+      title: "Tools",
+      skills: ["Figma", "Photoshop"],
       icon: "🛠️",
     },
   ]
 
   return (
-    <section className="space-y-12">
+    <section id="skills" className="space-y-12">
       <div className="flex items-center gap-4">
         <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
         <h2 className="text-4xl sm:text-5xl font-black gradient-text">SKILLS</h2>

@@ -2,10 +2,19 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Github, Linkedin, Mail, Phone, ExternalLink, Send, User, MessageSquare } from "lucide-react"
+import { Linkedin, Mail, Phone, ExternalLink, Send, User, MessageSquare } from "lucide-react"
 
 interface ContactProps {
   setActiveSection: (section: string) => void
+}
+
+// Custom Behance icon (not available in lucide-react)
+function BehanceIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M22 7.42h-6.32V5.5H22v1.92zM7.35 13.1c.6-.29 1-.87 1-1.7 0-1.5-1.14-2.4-2.9-2.4H0v10h5.65c1.9 0 3.15-1 3.15-2.6 0-1.14-.6-1.94-1.45-2.3zM2.2 10.7h2.14c.83 0 1.34.36 1.34 1.05 0 .68-.5 1.05-1.34 1.05H2.2V10.7zm2.4 6.6H2.2v-2.35h2.4c.9 0 1.45.44 1.45 1.17 0 .74-.55 1.18-1.45 1.18zM17.65 8.7c-2.85 0-4.7 1.9-4.7 4.75 0 2.9 1.95 4.65 4.85 4.65 1.9 0 3.4-.8 4.15-2.3l-1.85-.85c-.4.75-1.2 1.2-2.2 1.2-1.35 0-2.25-.75-2.45-2.05h6.65c.05-.3.05-.55.05-.75 0-2.75-1.75-4.65-4.5-4.65zm-2.25 3.7c.2-1.15 1-1.85 2.2-1.85 1.15 0 1.9.7 2.05 1.85h-4.25z" />
+    </svg>
+  )
 }
 
 export default function Contact({ setActiveSection }: ContactProps) {
@@ -26,7 +35,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
   }
 
   const handleSubmit = () => {
-    const mailTo = `mailto:aman30t@gmail.com?subject=Contact from Portfolio&body=Name: ${form.name}%0AEmail: ${form.email}%0AMessage: ${form.message}`
+    const mailTo = `mailto:shivanidevrani5@gmail.com?subject=Contact from Portfolio&body=Name: ${form.name}%0AEmail: ${form.email}%0AMessage: ${form.message}`
     window.location.href = mailTo
   }
 
@@ -34,26 +43,26 @@ export default function Contact({ setActiveSection }: ContactProps) {
     {
       icon: Mail,
       label: "Email",
-      value: "aman30t@gmail.com",
-      href: "mailto:aman30t@gmail.com",
+      value: "shivanidevrani5@gmail.com",
+      href: "mailto:shivanidevrani5@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 7668803243",
-      href: "tel:+917668803243",
+      value: "+91 6396258326",
+      href: "tel:+916396258326",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/aman",
-      href: "https://www.linkedin.com/in/aman-thapliyal-452a012a5/",
+      value: "linkedin.com/in/shivani-devrani",
+      href: "https://www.linkedin.com/in/shivani-devrani-629a66222/",
     },
     {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/aman30t",
-      href: "https://github.com/amanthapliyal30",
+      icon: BehanceIcon,
+      label: "Behance",
+      value: "behance.net/shivanidevrani",
+      href: "http://behance.net/shivanidevrani",
     },
   ]
 
@@ -152,7 +161,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
       </div>
 
       <p className="text-center text-muted-foreground text-sm pt-12">
-        © 2025 Aman Thapliyal — Made with ❤️ using Next.js, React & Tailwind CSS
+        © 2025 Shivani Devrani — Made with ❤️ using Next.js, React & Tailwind CSS
       </p>
     </section>
   )

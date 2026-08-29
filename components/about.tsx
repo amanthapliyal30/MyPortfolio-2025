@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { Sparkles, Code2, Brain, Target } from "lucide-react"
+import { Sparkles, Palette, Figma, Target } from "lucide-react"
 
 interface AboutProps {
   setActiveSection: (section: string) => void
@@ -23,8 +23,8 @@ export default function About({ setActiveSection }: AboutProps) {
   }, [setActiveSection])
 
   const stats = [
-    { icon: Brain, label: "MCA Student", value: "1st Year", color: "from-primary/20" },
-    { icon: Code2, label: "BCA CGPA", value: "7.0", color: "from-accent/20" },
+    { icon: Palette, label: "UI/UX Designer", value: "BCA Grad", color: "from-primary/20" },
+    { icon: Figma, label: "Design Tool", value: "Figma", color: "from-accent/20" },
     { icon: Target, label: "Projects", value: "5+", color: "from-primary/20" },
   ]
 
@@ -59,18 +59,13 @@ export default function About({ setActiveSection }: AboutProps) {
 
       <div className="space-y-4 sm:space-y-6">
         <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
-          I'm a first-year MCA student at Lovely Professional University specializing in Artificial Intelligence and
-          Machine Learning. With a strong foundation in Java, Python, and Data Structures & Algorithms, I'm passionate
-          about problem-solving and building innovative solutions.
+          Hi, I'm Shivani Devrani, a UI/UX Designer passionate about creating user-friendly and visually appealing
+          digital experiences. I design mobile apps and websites with a focus on usability, simplicity, and clean
+          design.
         </p>
         <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
-          My journey spans practical experience in machine learning and AI, including data preprocessing, feature
-          engineering, model training, and evaluation. I've built predictive models and applied advanced techniques to
-          extract meaningful insights from complex datasets.
-        </p>
-        <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
-          Passionate about the intersection of AI and real-world problem solving, I continuously explore innovative
-          approaches to develop scalable, intelligent solutions that make an impact across domains.
+          My approach is to understand user needs, solve real problems, and create intuitive interfaces that deliver
+          a seamless user experience.
         </p>
       </div>
     </section>

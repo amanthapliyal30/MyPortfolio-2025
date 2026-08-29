@@ -24,14 +24,15 @@ export default function Experience({ setActiveSection }: ExperienceProps) {
 
   const experiences = [
   {
-    title: "Web Developer",
-    company: "Flytant Private Ltd",
-    period: "Sep 2024 - Nov 2024",
+    title: "UI/UX Designer",
+    company: "Gamix Labs",
+    period: "Sep 2024 - Oct 2024",
     location: "Noida, India",
-    certificate: "https://drive.google.com/file/d/11aNTheneEkldYaPEnaEs_5v1xKl4N-zs/view",
+    // certificate: "https://drive.google.com/file/d/11aNTheneEkldYaPEnaEs_5v1xKl4N-zs/view",
     description: [
-      "Acquired practical skills in Next.js, TypeScript, and JavaScript through comprehensive training",
-      "Built a responsive e-commerce platform using Next.js and Express.js with authentication & cart features",
+      "Completed an internship working on live projects involving game slicing and mobile view designs using Adobe Photoshop. ",
+      "Designed mobile screens and layouts while maintaining clean visual hierarchy and usability. ",
+      "Collaborated on UI improvements and gained hands-on experience in real-world design workflows."
     ],
   },
 ]
@@ -41,7 +42,7 @@ export default function Experience({ setActiveSection }: ExperienceProps) {
     <section id="experience" className="space-y-12">
       <div className="flex items-center gap-4">
         <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
-        <h2 className="text-4xl sm:text-5xl font-black gradient-text">EXPERIENCE</h2>
+        <h2 className="text-4xl sm:text-5xl font-black gradient-text">INTERNSHIP</h2>
       </div>
 
       <div className="space-y-12">
@@ -83,9 +84,9 @@ export default function Experience({ setActiveSection }: ExperienceProps) {
                   ))}
                 </ul>
 
-                <p className="text-xs text-primary font-medium underline opacity-70 group-hover:opacity-100 transition-opacity">
+                {/* <p className="text-xs text-primary font-medium underline opacity-70 group-hover:opacity-100 transition-opacity">
                   📄 View Certificate
-                </p>
+                </p> */}
               </div>
             </div>
           </a>
